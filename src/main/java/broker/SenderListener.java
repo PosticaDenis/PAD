@@ -1,3 +1,8 @@
+package broker;
+
+import broker.Broker;
+import message.Message;
+
 import java.io.*;
 import java.net.Socket;
 import java.util.Base64;
@@ -8,18 +13,17 @@ import java.util.Base64;
 public class SenderListener extends Thread{
 
     private Socket socket;
-    //private PrintWriter out;
 
     SenderListener(Socket socket) {
-        this.socket = socket;
 
-        System.out.println("Hello, i'm " + socket.getRemoteSocketAddress().toString());
+        this.socket = socket;
+        //System.out.println("Hello, i'm " + socket.getRemoteSocketAddress().toString());
     }
 
     public void run() {
 
         try {
-            //out = new PrintWriter(socket.getOutputStream(), true);
+
             BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 
             String received;
@@ -36,7 +40,6 @@ public class SenderListener extends Thread{
                 removeThread();
             }
 
-            //out.close();
             in.close();
             socket.close();
 

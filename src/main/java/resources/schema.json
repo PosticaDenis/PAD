@@ -1,0 +1,25 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Message",
+    "description": "Message validation schema",
+    "type": "object",
+    "properties": {
+        "id": {
+            "description": "The unique identifier for a message",
+            "type": "string"
+        },
+        "to": {
+            "description": "Message reveiver",
+            "type": "string"
+        },
+        "from": {
+			"description": "Message sender",
+            "type": "string"
+        },
+        "content": {
+			"description": "Message content",
+            "type": "string",
+        }
+    },
+    "required": ["id", "to", "from", "content"]
+}

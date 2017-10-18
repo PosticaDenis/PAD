@@ -1,8 +1,7 @@
-import java.io.IOException;
+package receiver;
+
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
-import java.net.InetAddress;
-import java.net.ServerSocket;
 
 /**
  * Created by Dennis on 15-Oct-17.
@@ -19,12 +18,6 @@ public class Receiver {
         startListener();
 
     }
-
-    /*private void start() {
-
-        read();
-
-    }*/
 
     public void startListener() {
 

@@ -1,3 +1,8 @@
+package sender;
+
+import message.Message;
+import utils.RandomString;
+
 import java.io.*;
 import java.net.InetAddress;
 import java.net.Socket;
@@ -63,7 +68,9 @@ public class Sender {
                     else {
 
                         String serializedObject = "";
-                        Message msg = new Message(InetAddress.getLocalHost().getHostName(),"127.0.0.1", toBroker);
+                        Message msg = new Message(new RandomString().nextString(),InetAddress.getLocalHost().getHostName(),
+                                "127.0.0.1",
+                                toBroker);
 
                         try {
                             ByteArrayOutputStream bo = new ByteArrayOutputStream();
