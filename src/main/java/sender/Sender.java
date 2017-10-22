@@ -69,8 +69,7 @@ public class Sender {
 
                         String serializedObject = "";
                         Message msg = new Message(new RandomString().nextString(),InetAddress.getLocalHost().getHostName(),
-                                "127.0.0.1",
-                                toBroker);
+                                "127.0.0.1", toBroker);
 
                         try {
                             ByteArrayOutputStream bo = new ByteArrayOutputStream();

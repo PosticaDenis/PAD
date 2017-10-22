@@ -1,6 +1,5 @@
 package broker;
 
-import broker.Broker;
 import message.Message;
 
 import java.io.*;
@@ -17,7 +16,6 @@ public class SenderListener extends Thread{
     SenderListener(Socket socket) {
 
         this.socket = socket;
-        //System.out.println("Hello, i'm " + socket.getRemoteSocketAddress().toString());
     }
 
     public void run() {

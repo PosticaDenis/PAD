@@ -7,7 +7,7 @@ import java.io.File;
  **/
 public class Validator {
 
-    File schemaFile = new File("/Users/XYZ/schema.json");
+    File schemaFile = new File("E:\\Denis\\a4s1\\PAD\\src\\main\\java\\resources\\schema.json");
     //File jsonFile = new File("/Users/XYZ/data.json");
 
     public boolean isValid(String path) {
