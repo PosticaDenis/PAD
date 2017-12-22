@@ -3,7 +3,6 @@ package broker;
 import message.Message;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.type.TypeReference;
-import utils.Validator;
 
 import java.io.File;
 import java.io.IOException;
@@ -25,27 +24,19 @@ public class StorageMaster extends Thread{
     protected void setUp() {
 
         Broker.queue = new ConcurrentLinkedQueue<>();
-        Validator validator = new Validator();
 
         File f = new File(Broker.backupPath);
 
         if (f.exists() && !f.isDirectory()) {
 
+            try {
 
-            if (validator.isValid(Broker.backupPath)) {
+                Broker.queue = mapper.readValue(new File(Broker.backupPath), new TypeReference<ConcurrentLinkedQueue<Message>>(){});
 
-                try {
+                System.out.println("The restored queue contains " + Broker.queue.size() + " messages.");
+            } catch (IOException e) {
 
-                    Broker.queue = mapper.readValue(new File(Broker.backupPath), new TypeReference<ConcurrentLinkedQueue<Message>>(){});
-
-                    System.out.println("The restored queue contains " + Broker.queue.size() + " messages.");
-                } catch (IOException e) {
-
-                    System.out.println("No saved version found");
-                }
-            }
-            else {
-                System.out.println("Backup found, but it is corrupted/empty.");
+                System.out.println("No saved version found");
             }
         }
         else {

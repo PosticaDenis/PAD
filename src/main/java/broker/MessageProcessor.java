@@ -14,7 +14,7 @@ import java.util.List;
  **/
     public class MessageProcessor extends Thread{
 
-    private static int age = 5; // 5 seconds
+    //private static int age = 5; // 5 seconds
     private static ObjectMapper mapper;
     private Scheduler scheduler;
     static List<String> responses;
@@ -50,7 +50,7 @@ import java.util.List;
                     } catch (Exception e) {
 
                         System.out.println("Error creating DatagramSocket");
-                        e.printStackTrace();
+                        //e.printStackTrace();
                     }
                 }
             }

@@ -27,11 +27,11 @@ public class Sender {
 
     private Sender() {
 
-        //readBrokerHostData();
+        readBrokerHostData();
 
         try {
-            //senderSocket = new Socket(brokerHost, 1234);
-            senderSocket = new Socket("localhost", 1234);
+            senderSocket = new Socket(brokerHost, 1234);
+            //senderSocket = new Socket("localhost", 1234);
 
             out = new PrintWriter(senderSocket.getOutputStream(), true);
             in = new BufferedReader(new InputStreamReader(senderSocket.getInputStream()));
@@ -40,7 +40,7 @@ public class Sender {
         } catch (IOException e) {
 
             System.out.println("\nPlease try later. Currently, the broker is offline!");
-            exit();
+            //exit();
 
             System.exit(-1);
         }

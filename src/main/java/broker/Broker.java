@@ -34,9 +34,9 @@ public class Broker {
         startStorageMaster();
 
         messageProcessor = new MessageProcessor();
-        startProcessor();
+        startMessageProcessor();
         startListener(1234);
-        startStorageMaster();
+        //startStorageMaster();
 
 
     }
@@ -58,16 +58,16 @@ public class Broker {
         }
     }
 
-    private void startProcessor() {
+    private void startMessageProcessor() {
 
-        System.out.println("Processor started.");
+        System.out.println("MessageProcessor started.");
         messageProcessor.start();
 
     }
 
     private void startStorageMaster() {
 
-        System.out.println("SM started.");
+        System.out.println("StorageMaster started.");
 
         storageMaster.setUp();
         storageMaster.start();

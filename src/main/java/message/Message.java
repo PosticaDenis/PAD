@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * Created by Dennis on 15-Oct-17.
  **/
-public class Message implements Serializable{
+public class Message implements Serializable {
 
     private String id;
     private String from;
@@ -13,10 +13,6 @@ public class Message implements Serializable{
     private String content;
     private boolean isSaved = false;
     private int cnt = 0;
-
-    public Message() {
-
-    }
 
     public Message(String id, String from, String to, String content) {
 
